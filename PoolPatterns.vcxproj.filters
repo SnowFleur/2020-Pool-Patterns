@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="objectPool">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="MemoryPool">
+      <UniqueIdentifier>{a50e4091-c6b2-409d-83e6-7c8132a091b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestCode">
+      <UniqueIdentifier>{58c318a4-b3ff-4e8f-9fa4-8cca146f97e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThreadPool">
+      <UniqueIdentifier>{5ebb9dc9-b3c7-494f-9b72-c5fe171e36c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestCode\GameObject">
+      <UniqueIdentifier>{2560ac8e-9ee0-48fd-8847-f206ead08382}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="TestCode.cpp">
+      <Filter>TestCode</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="objectPool.h">
+      <Filter>objectPool</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCode.h">
+      <Filter>TestCode</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>TestCode\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="memoryPool.h">
+      <Filter>MemoryPool</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedBlock.h">
+      <Filter>MemoryPool</Filter>
+    </ClInclude>
+    <ClInclude Include="FixedBlock.inl">
+      <Filter>objectPool</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
