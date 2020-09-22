@@ -18,6 +18,24 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main&amp;TestCode\GameObject.h" />
+    <ClInclude Include="Main&amp;TestCode\TestCode.h" />
+    <ClInclude Include="MemoryPool\CMemoryManager.h" />
+    <ClInclude Include="MemoryPool\FixedMemoryBlock.h" />
+    <ClInclude Include="MemoryPool\memoryPool.h" />
+    <ClInclude Include="ObjectPool\objectPool.h" />
+    <ClInclude Include="ThreadPool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CThreadPool.cpp" />
+    <ClCompile Include="Main&amp;TestCode\main.cpp" />
+    <ClCompile Include="Main&amp;TestCode\TestCode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MemoryPool\CMemoryManager.inl" />
+    <ClCompile Include="MemoryPool\FixedMemoryBlock.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -139,22 +157,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="TestCode.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="FixedBlock.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="memoryPool.h" />
-    <ClInclude Include="objectPool.h" />
-    <ClInclude Include="TestCode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="FixedBlock.inl">
-      <FileType>Document</FileType>
-    </ClInclude>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

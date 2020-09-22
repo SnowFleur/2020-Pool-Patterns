@@ -1,53 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="main">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="objectPool">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="MemoryPool">
       <UniqueIdentifier>{a50e4091-c6b2-409d-83e6-7c8132a091b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="TestCode">
-      <UniqueIdentifier>{58c318a4-b3ff-4e8f-9fa4-8cca146f97e1}</UniqueIdentifier>
     </Filter>
     <Filter Include="ThreadPool">
       <UniqueIdentifier>{5ebb9dc9-b3c7-494f-9b72-c5fe171e36c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="TestCode\GameObject">
+    <Filter Include="Main&amp;TestCode">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Main&amp;TestCode\GameObject">
       <UniqueIdentifier>{2560ac8e-9ee0-48fd-8847-f206ead08382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectPool">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="MemoryPool\MemoryManager">
+      <UniqueIdentifier>{db891619-0431-42e4-b937-58284d89b052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemoryPool\FixedMemoryBlock">
+      <UniqueIdentifier>{57a0f5a4-fd8b-4355-9bb1-6d0b71e38950}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>main</Filter>
+    <ClInclude Include="Main&amp;TestCode\TestCode.h">
+      <Filter>Main&amp;TestCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Main&amp;TestCode\GameObject.h">
+      <Filter>Main&amp;TestCode\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPool\memoryPool.h">
+      <Filter>MemoryPool</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPool\objectPool.h">
+      <Filter>ObjectPool</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPool\CMemoryManager.h">
+      <Filter>MemoryPool\MemoryManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPool\FixedMemoryBlock.h">
+      <Filter>MemoryPool\FixedMemoryBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>ThreadPool</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main&amp;TestCode\main.cpp">
+      <Filter>Main&amp;TestCode</Filter>
     </ClCompile>
-    <ClCompile Include="TestCode.cpp">
-      <Filter>TestCode</Filter>
+    <ClCompile Include="Main&amp;TestCode\TestCode.cpp">
+      <Filter>Main&amp;TestCode</Filter>
+    </ClCompile>
+    <ClCompile Include="CThreadPool.cpp">
+      <Filter>ThreadPool</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="objectPool.h">
-      <Filter>objectPool</Filter>
-    </ClInclude>
-    <ClInclude Include="TestCode.h">
-      <Filter>TestCode</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>TestCode\GameObject</Filter>
-    </ClInclude>
-    <ClInclude Include="memoryPool.h">
-      <Filter>MemoryPool</Filter>
-    </ClInclude>
-    <ClInclude Include="FixedBlock.h">
-      <Filter>MemoryPool</Filter>
-    </ClInclude>
-    <ClInclude Include="FixedBlock.inl">
-      <Filter>objectPool</Filter>
-    </ClInclude>
+    <None Include="MemoryPool\CMemoryManager.cpp">
+      <Filter>MemoryPool\MemoryManager</Filter>
+    </None>
+    <None Include="MemoryPool\FixedMemoryBlock.cpp">
+      <Filter>MemoryPool\FixedMemoryBlock</Filter>
+    </None>
   </ItemGroup>
 </Project>
