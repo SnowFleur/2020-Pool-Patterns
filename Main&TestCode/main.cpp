@@ -3,14 +3,11 @@
 #include"TestCode.h"
 
 
-
-
 int main() {
-    std::unique_ptr<CTestCode> test = std::make_unique<CTestCode>();
+    //std::unique_ptr<CTestCode> test = std::make_unique<CTestCode>();
+    CTestCode test;
 #ifdef _DEBUG
-    std::cout << " Change to Release Mode\n";
-#else
-    //Set Test Type Pool
-    test->Run();
+    std::cout << " **********Excute Debug Mode**********\n\n";
 #endif // _DEBUG
-}
+    test.Run();
+} 

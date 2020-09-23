@@ -1,49 +1,54 @@
 #include"TestCode.h"
 
-CTestCode::CTestCode() {
-#ifdef OBJECT_POOL  //Test Not ObJect Pool
-    uPtrGameObjPoolHandle_ = std::make_unique<CObjectPool<CGameObject>>(10);
-#elif MEMORY_POOL //Test Not Memory Pool
+#ifdef MEMORY_POOL //Init Memory Pool
+UPtrPool CTestCode::uPtrPoolHandle_ =
+std::make_unique<CMemoryManager<CFixedMemoryBlock>>(MEMORY_SIZE);
+#endif
 
-#elif THREAD_POOL //Test Not Thread Pool
+
+CTestCode::CTestCode() {
+#if OBJECT_POOL  //Init ObJect Pool
+    uPtrPoolHandle_ = std::make_unique<CObjectPool<CGameObject>>(10);
+#elif THREAD_POOL //Init Thread Pool
+    uPtrPoolHandle_ = std::make_uniqueu<CThreadpool>;
 #endif
 }
 
 void CTestCode::NotUsePool() {
-#ifdef OBJECT_POOL  //Test Not ObJect Pool
     for (int i = 0; i < MAX_LOOP_NUMBER; ++i) {
+#ifdef OBJECT_POOL  //Test Not ObJect Pool
         CGameObject* temp = new CGameObject();
         delete temp;
-    }
 #elif MEMORY_POOL //Test Not Memory Pool
-
+        int* ptr = (int*)malloc(100);
+        free(ptr);
 #elif THREAD_POOL //Test Not Thread Pool
-
 #endif // 
+    }
 }
 
 void CTestCode::UsePool() {
-#ifdef OBJECT_POOL  //Test ObJect Pool
     for (int i = 0; i < MAX_LOOP_NUMBER; ++i) {
-        auto temp = uPtrGameObjPoolHandle_->GetMemory();
-    }
+#ifdef OBJECT_POOL  //Test ObJect Pool
+        auto temp = uPtrPoolHandle_->GetMemory();
 #elif MEMORY_POOL //Test Memory Pool
-
-
+        try {
+            int* intPtr = reinterpret_cast<int*>(uPtrPoolHandle_->Allocate(100));
+            uPtrPoolHandle_->Deallocate(intPtr);
+        }
+        catch (std::bad_alloc&) {
+            std::cout << "Error: bad_alloc\n";
+            while (1);
+        }
 #elif THREAD_POOL //Test Thread Pool
-
-
 #endif // 
+    }
 }
 
 
 void CTestCode::Run() {
-
     RunPool();
-
-    system("pause");
 }
-
 
 void CTestCode::RunPool() {
 
@@ -63,6 +68,7 @@ void CTestCode::RunPool() {
     startTime = high_resolution_clock::now();
     NotUsePool();
     endTime = high_resolution_clock::now();
+    elapsedTime = endTime - startTime;
 
 #ifdef OBJECT_POOL  //Test ObJect Pool
     std::cout << "Not Using ObjectPool elapsed Time: " << elapsedTime.count() << " s\n";
@@ -72,4 +78,12 @@ void CTestCode::RunPool() {
     std::cout << "Not Using ThreadPool elapsed Time: " << elapsedTime.count() << " s\n";
 #endif // 
 
+}
+
+void* CTestCode::operator new(size_t memorySize) {
+    return uPtrPoolHandle_->Allocate(memorySize);
+}
+
+void CTestCode::operator delete(void* DeletePtr) {
+    uPtrPoolHandle_->Deallocate(DeletePtr);
 }
