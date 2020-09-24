@@ -5,6 +5,8 @@
 //#define OBJECT_POOL 2
 //#define THREAD_POOL 3
 
+constexpr int       MAX_LOOP_NUMBER = 10000000;
+constexpr size_t    MEMORY_SIZE = 1000;
 
 #include<iostream>
 #include<chrono>
@@ -24,8 +26,6 @@
 #endif
 
 using namespace std::chrono;
-constexpr int       MAX_LOOP_NUMBER = 5000000;
-constexpr size_t    MEMORY_SIZE     = 1000;
 
 class CTestCode {
 private:

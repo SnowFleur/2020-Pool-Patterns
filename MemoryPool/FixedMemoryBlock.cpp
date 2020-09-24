@@ -4,9 +4,7 @@
 
 CFixedMemoryBlock::CFixedMemoryBlock(size_t fixedMemorySize)
     :arena_size_{fixedMemorySize}, memoryHandle_{nullptr}, block_size_{ 0 } {
-    
     memoryHandle_ = (char*)malloc(arena_size_);
-
 }
 
 void* CFixedMemoryBlock::Allocate(size_t size) {
@@ -15,7 +13,6 @@ void* CFixedMemoryBlock::Allocate(size_t size) {
     if (Empty() == false) {
         return nullptr;
     }
-
 
     //요구하는 size가 더 크면 그 사이즈만큼
     //작다면 포인터 크기만큼 size를 잡는다.

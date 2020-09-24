@@ -27,6 +27,7 @@ void CTestCode::NotUsePool() {
     }
 }
 
+
 void CTestCode::UsePool() {
     for (int i = 0; i < MAX_LOOP_NUMBER; ++i) {
 #ifdef OBJECT_POOL  //Test ObJect Pool
@@ -79,6 +80,7 @@ void CTestCode::RunPool() {
 #endif // 
 
 }
+
 
 void* CTestCode::operator new(size_t memorySize) {
     return uPtrPoolHandle_->Allocate(memorySize);

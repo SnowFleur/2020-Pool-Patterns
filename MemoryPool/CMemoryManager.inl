@@ -41,11 +41,6 @@ inline bool CMemoryManager<MemoryBlock>::Empty()const {
     return false;
 }
 
-//template<class MemoryBlock>
-//inline size_t CMemoryManager<MemoryBlock>::BlockSize()const {
-//    return blockSize_;
-//}
-
 template<class MemoryBlock>
 inline size_t CMemoryManager<MemoryBlock>::Capacity()const {
     //메모리블럭 핸들의 값 전달
