@@ -5,8 +5,8 @@
 //#define OBJECT_POOL 2
 //#define THREAD_POOL 3
 
-constexpr int       MAX_LOOP_NUMBER = 10000000;
-constexpr size_t    MEMORY_SIZE = 1000;
+constexpr int       MAX_LOOP_NUMBER = 10000000; //성능 테스트 루프
+constexpr size_t    MEMORY_SIZE = 1000; //메모리 풀 사이즈
 
 #include<iostream>
 #include<chrono>

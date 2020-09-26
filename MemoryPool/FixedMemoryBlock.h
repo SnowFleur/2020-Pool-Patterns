@@ -7,7 +7,7 @@ private:
 	size_t		block_size_;
 public:
     CFixedMemoryBlock(size_t fixedMemorySize);
-    ~CFixedMemoryBlock() = default;
+	~CFixedMemoryBlock();
     CFixedMemoryBlock(const CFixedMemoryBlock&) = delete;
     CFixedMemoryBlock(CFixedMemoryBlock&&) = delete;
     CFixedMemoryBlock& operator=(const CFixedMemoryBlock&) = delete;

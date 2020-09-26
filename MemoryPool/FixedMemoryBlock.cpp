@@ -7,6 +7,12 @@ CFixedMemoryBlock::CFixedMemoryBlock(size_t fixedMemorySize)
     memoryHandle_ = (char*)malloc(arena_size_);
 }
 
+CFixedMemoryBlock::~CFixedMemoryBlock() {
+    if (memoryHandle_ != nullptr) {
+        free(memoryHandle_);
+    }
+}
+
 void* CFixedMemoryBlock::Allocate(size_t size) {
 
     //메모리가 이미 할당됐다면 nullptr 반환
