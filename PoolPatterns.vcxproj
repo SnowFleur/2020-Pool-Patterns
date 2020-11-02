@@ -25,12 +25,12 @@
     <ClInclude Include="MemoryPool\FixedMemoryBlock.h" />
     <ClInclude Include="MemoryPool\memoryPool.h" />
     <ClInclude Include="ObjectPool\objectPool.h" />
-    <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="ThreadPool\ThreadPool.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CThreadPool.cpp" />
     <ClCompile Include="Main&amp;TestCode\main.cpp" />
     <ClCompile Include="Main&amp;TestCode\TestCode.cpp" />
+    <ClCompile Include="ThreadPool\CThreadPool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MemoryPool\CMemoryManager.inl" />

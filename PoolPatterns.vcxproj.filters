@@ -44,7 +44,7 @@
     <ClInclude Include="MemoryPool\FixedMemoryBlock.h">
       <Filter>MemoryPool\FixedMemoryBlock</Filter>
     </ClInclude>
-    <ClInclude Include="ThreadPool.h">
+    <ClInclude Include="ThreadPool\ThreadPool.h">
       <Filter>ThreadPool</Filter>
     </ClInclude>
   </ItemGroup>
@@ -55,7 +55,7 @@
     <ClCompile Include="Main&amp;TestCode\TestCode.cpp">
       <Filter>Main&amp;TestCode</Filter>
     </ClCompile>
-    <ClCompile Include="CThreadPool.cpp">
+    <ClCompile Include="ThreadPool\CThreadPool.cpp">
       <Filter>ThreadPool</Filter>
     </ClCompile>
   </ItemGroup>
