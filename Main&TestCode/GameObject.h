@@ -12,7 +12,7 @@ private:
     bool    isUsed_;
 public:
     //CGameObject() = default;
-    CGameObject() {
+    CGameObject() :name_{}, hp_{}, exp_{}, x_{}, y_{}, isUsed_{} {
         std::cout << "Call Constructor\n";
     }
 
