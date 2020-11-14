@@ -1,5 +1,11 @@
 #pragma once
-class CThreadPool
-{
+
+#include<thread>
+
+class CThreadPool{
+private:
+
+public:
+    CThreadPool() {};
 };
 
